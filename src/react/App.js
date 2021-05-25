@@ -215,7 +215,7 @@ function Pre({ lines }) {
 }
 
 function GeminiList({ items }) {
-  return null && (
+  return (
     <List>
       {items.map((text, idx) => (
         <ListItem key={idx}>
