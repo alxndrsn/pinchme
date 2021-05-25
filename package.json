@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "src/electron/starter.js",
   "homepage": "./",
+  "repository": "github:alxndrsn/pinchme",
   "dependencies": {
     "@derhuerst/gemini": "https://github.com/alxndrsn/gemini.git#master",
     "iconv": "^3.0.0",
