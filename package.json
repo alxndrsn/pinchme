@@ -1,0 +1,57 @@
+{
+  "name": "pinchme",
+  "version": "0.1.0",
+  "main": "src/electron/starter.js",
+  "homepage": "./",
+  "dependencies": {
+    "@derhuerst/gemini": "https://github.com/alxndrsn/gemini.git#master",
+    "iconv": "^3.0.0",
+    "open": "^8.1.0"
+  },
+  "scripts": {
+    "build": "yarn react:build && yarn electron:build",
+    "electron": "electron .",
+    "electron:dev": "ELECTRON_START_URL=http://localhost:3000 SHOW_DEV_TOOLS=true electron .",
+    "electron:build": "electron-packager --overwrite . 'pinchme 🦀'",
+    "lint": "eslint --max-warnings=0 --report-unused-disable-directives .",
+    "react:build": "react-scripts build",
+    "react:start": "BROWSER=false react-scripts start",
+    "react:test": "react-scripts test",
+    "start": "nf start",
+    "test": "yarn lint && yarn test:mocha",
+    "test:mocha": "mocha test/**/*.spec.js",
+    "todo": "grep -Ern '(TODO|FIXME)' src/"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@fontsource/roboto": "^4.3.0",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "chai": "^4.3.4",
+    "electron": "^12.0.7",
+    "electron-packager": "^15.2.0",
+    "foreman": "^3.0.1",
+    "mocha": "^8.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  }
+}
