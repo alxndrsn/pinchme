@@ -1,6 +1,6 @@
 {
   "name": "pinchme",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "src/electron/starter.js",
   "homepage": "./",
   "repository": "github:alxndrsn/pinchme",
