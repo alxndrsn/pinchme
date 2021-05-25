@@ -100,7 +100,7 @@ export default function PrimarySearchAppBar({ goBack, goHome, history, onChangeU
         <IconButton aria-label="go to homepage" color="inherit">
           <HomeIcon/>
         </IconButton>
-        <p>Refresh</p>
+        <p>Home</p>
       </MenuItem>
     </Menu>
   );
