@@ -3,6 +3,7 @@ import { Component } from 'react';
 import '@fontsource/roboto';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -119,9 +120,9 @@ export default class App extends Component {
               <><h1>mime: {mime}</h1><h1>Content</h1><pre>{content}</pre></>
         ) : null;
 
-
     return (
       <>
+        <CssBaseline/>
         <Navbar uri={currentUri} onChangeUri={this.updateLocation} goBack={this.goBack} goHome={this.goHome} history={history} refresh={this.refresh}/>
         <Paper elevation={3} style={{marginLeft:'auto', marginRight:'auto', marginBottom:'2em', maxWidth:1024, padding:'1em'}}>
           {paperContent}
