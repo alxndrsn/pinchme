@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar({ goBack, goHome, history, onChangeUri, refresh, uri }) {
+export default function Navbar({ goBack, goHome, history, onChangeUri, refresh, uri }) {
   const canGoBack = history.length > 1;
 
   const classes = useStyles();
