@@ -4,16 +4,20 @@ const geminiRequest = require('@derhuerst/gemini/client')
 
 const toString = require('./to-string');
 
-const geminiOpts = {
-  followRedirects: false,
-  tlsOpt: {
-    rejectUnauthorized: false,
-  },
-};
-
 function get(uri) {
   return new Promise((resolve, reject) => {
-    geminiRequest(uri, geminiOpts, (err, res) => {
+    // Unlike node.js, browser's URL() constructor does not pull hostname from gemini URLs.
+    const servername = uri.match(/^gemini:\/\/([^/]*)/)[1];
+
+    const opts = {
+      followRedirects: false,
+      tlsOpt: {
+        rejectUnauthorized: false, // TODO surface certificate properties to the user
+        servername,
+      },
+    };
+
+    geminiRequest(uri, opts, (err, res) => {
       if(err) return reject(normaliseErr(err));
 
       const bufs = [];
